@@ -1,5 +1,4 @@
 package com.infotop.tourismplatform.main;
-
 import com.infotop.tourismplatform.R;
 import com.infotop.tourismplatform.R.id;
 import com.infotop.tourismplatform.R.layout;
@@ -8,25 +7,45 @@ import com.infotop.tourismplatform.introductionnote.IntroductionNoteActivity;
 
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
+import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TabHost;
+import android.widget.TabHost.TabSpec;
 
-public class RaidersMainActivity extends Activity {
+public class RaidersMainActivity extends TabActivity {
+
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_raiders_main);
-	}
-	
-	public void introductionNote(View view) {
-		Intent intent=new Intent(this,IntroductionNoteActivity.class);
-		startActivity(intent);
+		setContentView(R.layout.activity_tablayout);
+	//	deviceId = getIntent().getExtras().getString("dId");
+		TabHost tabHost = getTabHost();
+
+		// Tab for Songs
+		TabSpec tab1 = tabHost.newTabSpec("Main");
+		Intent i1 = new Intent(RaidersMainActivity.this, MainPage.class);
+		//i1.putExtra("dId", deviceId);
+		tab1.setIndicator(getResources().getString(R.string.MainPage));
+		tab1.setContent(i1);
+
+		// Tab for Videos
+		TabSpec tab2 = tabHost.newTabSpec("Comment");
+		Intent i2 = new Intent(RaidersMainActivity.this, CommentActivity.class);
+		//i2.putExtra("dId", deviceId);
+		tab2.setIndicator(getResources().getString(R.string.Comment));
+		tab2.setContent(i2);
+
+		// Adding all TabSpec to TabHost
 		
-	}
+		tabHost.addTab(tab1); // Adding songs tab
+		tabHost.addTab(tab2); // Adding videos tab
+	
+}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -47,3 +66,4 @@ public class RaidersMainActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 }
+
