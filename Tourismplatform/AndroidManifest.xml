@@ -5,8 +5,14 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="16"
         android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -47,8 +53,12 @@
             android:label="@string/title_activity_traffic" >
         </activity>
         <activity
-            android:name="com.infotop.tourismplatform.main.TravelNotesMainActivity"
+            android:name=".main.TravelNotesMainActivity"
             android:label="@string/title_activity_travel_notes_main" >
+        </activity>
+        <activity
+            android:name="com.infotop.tourismplatform.traffic.TrafficAdapterActivity"
+            android:label="@string/title_activity_traffic_adapter" >
         </activity>
     </application>
 

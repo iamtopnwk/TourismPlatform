@@ -1,28 +1,27 @@
-package com.infotop.tourismplatform.buy;
+package com.infotop.tourismplatform.traffic;
 
 import com.infotop.tourismplatform.R;
 import com.infotop.tourismplatform.R.id;
 import com.infotop.tourismplatform.R.layout;
 import com.infotop.tourismplatform.R.menu;
 
-import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class BuyActivity extends ActionBarActivity {
+public class TrafficAdapterActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_buy);
+		setContentView(R.layout.activity_traffic_adapter);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.buy, menu);
+		getMenuInflater().inflate(R.menu.traffic_adapter, menu);
 		return true;
 	}
 

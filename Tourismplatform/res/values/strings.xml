@@ -11,5 +11,6 @@
     <string name="title_activity_popular_places">PopularPlacesActivity</string>
     <string name="title_activity_traffic">TrafficActivity</string>
     <string name="title_activity_travel_notes_main">TravelNotesMainActivity</string>
+    <string name="title_activity_traffic_adapter">TrafficAdapterActivity</string>
 
 </resources>
