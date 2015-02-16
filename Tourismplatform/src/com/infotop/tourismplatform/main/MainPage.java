@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 public class MainPage extends Activity {
@@ -18,13 +19,14 @@ public class MainPage extends Activity {
 	 ArrayList<String> list = new ArrayList<String>();
 	 ArrayList<String> list1 = new ArrayList<String>();
 	 private ModulesListAdapter listAdapter ;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_page);
 		mainListView = (ListView) findViewById( R.id.mainlist);
-		String[] modules = new String[] { "Introduction", "Food", "Buy"}; 
-		String[] modules1=new String[] { "Traffic","LocalTransport", "PopularPlace"}; 
+		String[] modules = new String[] { "Introduction","PopularPlace","Traffic"}; 
+		String[] modules1=new String[] { "Food", "Buy","LocalTransport"}; 
 		 list.addAll( Arrays.asList(modules) );
 		 list1.addAll( Arrays.asList(modules1) );
 		 

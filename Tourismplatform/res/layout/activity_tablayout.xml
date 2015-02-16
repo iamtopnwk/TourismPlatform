@@ -5,11 +5,57 @@
     android:layout_height="fill_parent"
      android:background="#ffffff" >
 
-    <ImageView
-        android:id="@+id/mainImageId"
+  <ViewFlipper
+        android:id="@+id/flipper1"
         android:layout_width="fill_parent"
-        android:layout_height="100dp"
-        android:src="@drawable/chinaphoto" />
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:flipInterval="3000"
+        android:inAnimation="@android:anim/slide_in_left"
+        android:outAnimation="@android:anim/slide_out_right" >
+
+        <ImageView
+            android:id="@+id/homeviewflipper1"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:adjustViewBounds="true"
+          
+            android:scaleType="fitXY" />
+
+        <ImageView
+            android:id="@+id/homeviewflipper2"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY" />
+
+        <ImageView
+            android:id="@+id/homeviewflipper3"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:adjustViewBounds="true"
+            
+            android:scaleType="fitXY" />
+
+        <ImageView
+            android:id="@+id/homeviewflipper4"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:adjustViewBounds="true"
+           
+            android:scaleType="fitXY" />
+
+        <ImageView
+            android:id="@+id/homeviewflipper5"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:adjustViewBounds="true"
+            
+            android:scaleType="fitXY" />
+    </ViewFlipper>
+
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -28,7 +74,7 @@
             android:id="@android:id/tabcontent"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_marginTop="150dp" >
+            android:layout_marginTop="140dp" >
         </FrameLayout>
     </RelativeLayout>
 
