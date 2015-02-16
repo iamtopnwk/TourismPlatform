@@ -29,8 +29,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".introductionnote.IntroductionNoteActivity"
-            android:label="@string/title_activity_introduction_note" >
+
+            android:name=".main.CommentActivity"
+            android:label="@string/title_activity_comment" >
+        </activity>
+        <activity
+            android:name=".main.MainPage"
+            android:label="@string/title_activity_main_page" >
+
         </activity>
         <activity
             android:name=".food.FoodActivity"
@@ -39,6 +45,12 @@
         <activity
             android:name=".buy.BuyActivity"
             android:label="@string/title_activity_buy" >
+        </activity>
+         
+         <activity
+     
+            android:name=".introductionnote.IntroductionNoteActivity"
+            android:label="@string/title_activity_introduction_note" >
         </activity>
         <activity
             android:name=".localtransfer.LocalTransferActivity"
@@ -55,6 +67,7 @@
         <activity
             android:name=".main.TravelNotesMainActivity"
             android:label="@string/title_activity_travel_notes_main" >
+
         </activity>
         <activity
             android:name="com.infotop.tourismplatform.traffic.TrafficAdapterActivity"
