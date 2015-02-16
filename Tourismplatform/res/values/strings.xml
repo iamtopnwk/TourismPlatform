@@ -4,21 +4,36 @@
     <string name="app_name">Tourismplatform</string>
     <string name="hello_world">1stpage</string>
     <string name="action_settings">Settings</string>
-
-    <string name="title_activity_comment">CommentActivity</string>
+    
+                    <!-- Main Page -->
+<string name="title_activity_comment">CommentActivity</string>
     <string name="MainPage">Main</string>
     <string name="Comment">Comment</string>
     <string name="title_activity_main_page">MainPage</string>
-
+    
+              <!-- IntroductionNote module -->
     <string name="title_activity_introduction_note">IntroductionNoteActivity</string>
+    
+                 <!--Food module  -->
     <string name="title_activity_food">FoodActivity</string>
+    
+                  <!-- Buy module -->
     <string name="title_activity_buy">BuyActivity</string>
+    
+               <!--LocalTransfer module  -->
     <string name="title_activity_local_transfer">LocalTransferActivity</string>
+    
+               <!-- PopularPlaces module -->
     <string name="title_activity_popular_places">PopularPlacesActivity</string>
+    
+                 <!-- Traffic module -->
     <string name="title_activity_traffic">TrafficActivity</string>
+    <string name="title_activity_traffic_adapter">TrafficAdapterActivity</string>
+    
+                <!-- TravelNote module -->
     <string name="title_activity_travel_notes_main">TravelNotesMainActivity</string>
 
-    <string name="title_activity_traffic_adapter">TrafficAdapterActivity</string>
+    
 
 
 
