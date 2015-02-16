@@ -2,7 +2,11 @@
 <resources>
 
     <string name="app_name">Tourismplatform</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">1stpage</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_comment">CommentActivity</string>
+    <string name="MainPage">Main</string>
+    <string name="Comment">Comment</string>
+    <string name="title_activity_main_page">MainPage</string>
 
 </resources>
