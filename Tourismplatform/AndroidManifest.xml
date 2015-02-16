@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="com.infotop.tourismplatform.main.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,8 +23,28 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.infotop.tourismplatform.introductionnote.IntroductionNoteActivity"
+            android:name=".introductionnote.IntroductionNoteActivity"
             android:label="@string/title_activity_introduction_note" >
+        </activity>
+        <activity
+            android:name=".food.FoodActivity"
+            android:label="@string/title_activity_food" >
+        </activity>
+        <activity
+            android:name=".buy.BuyActivity"
+            android:label="@string/title_activity_buy" >
+        </activity>
+        <activity
+            android:name=".localtransfer.LocalTransferActivity"
+            android:label="@string/title_activity_local_transfer" >
+        </activity>
+        <activity
+            android:name=".popularplaces.PopularPlacesActivity"
+            android:label="@string/title_activity_popular_places" >
+        </activity>
+        <activity
+            android:name="com.infotop.tourismplatform.traffic.TrafficActivity"
+            android:label="@string/title_activity_traffic" >
         </activity>
     </application>
 
