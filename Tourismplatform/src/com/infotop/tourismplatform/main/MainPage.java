@@ -4,12 +4,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import com.infotop.tourismplatform.R;
+import com.infotop.tourismplatform.buy.BuyActivity;
+import com.infotop.tourismplatform.introductionnote.IntroductionNoteActivity;
+import com.infotop.tourismplatform.traffic.TrafficActivity;
 
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -25,8 +31,8 @@ public class MainPage extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_page);
 		mainListView = (ListView) findViewById( R.id.mainlist);
-		String[] modules = new String[] { "Introduction","PopularPlace","Traffic"}; 
-		String[] modules1=new String[] { "Food", "Buy","LocalTransport"}; 
+		String[] modules = new String[] { "Introduction","Traffic","Buy"}; 
+		String[] modules1=new String[] { "PopularPlace","Food","LocalTransport"}; 
 		 list.addAll( Arrays.asList(modules) );
 		 list1.addAll( Arrays.asList(modules1) );
 		 
@@ -36,6 +42,47 @@ public class MainPage extends Activity {
 		    
 		    
 		    mainListView.setAdapter( listAdapter );    
+		    
+		   /* mainListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+				@Override
+				public void onItemClick(AdapterView<?> parent, View view,
+						int position, long id) {
+					//System.out.println("POSITION======"+position);
+					//System.out.println("VIEW======"+id);
+					Intent intent = null;
+					 switch(position) {
+					 case 1: 
+						  
+				            intent = new Intent(getApplicationContext(), IntroductionNoteActivity.class);
+				            startActivity(intent);
+						   
+				     break;
+				      
+					 case 2:
+						 for(int i=0;i<1;i++){
+				            intent = new Intent(getApplicationContext(), TrafficActivity.class);
+				            startActivity(intent);
+				            System.out.println("iii"+i);
+				            }
+						
+						 intent = new Intent(getApplicationContext(), IntroductionNoteActivity.class);
+				            startActivity(intent);
+				     break;
+				     
+					 case 3:
+				            intent = new Intent(getApplicationContext(), BuyActivity.class);
+				            startActivity(intent);
+				     break;
+					 default:
+				      
+					 }
+					
+				}
+			});
+		    */
+		    
+		    
+		    
 	}
 
 	@Override

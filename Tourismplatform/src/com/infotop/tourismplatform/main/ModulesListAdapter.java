@@ -5,10 +5,24 @@ import java.util.ArrayList;
 
 
 
+
+
+
+
+
+
+
 import com.infotop.tourismplatform.R;
+import com.infotop.tourismplatform.buy.BuyActivity;
+import com.infotop.tourismplatform.food.FoodActivity;
+import com.infotop.tourismplatform.introductionnote.IntroductionNoteActivity;
+import com.infotop.tourismplatform.localtransfer.LocalTransferActivity;
+import com.infotop.tourismplatform.popularplaces.PopularPlacesActivity;
+import com.infotop.tourismplatform.traffic.TrafficActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +37,7 @@ public class ModulesListAdapter extends ArrayAdapter<String> {
 	private ArrayList<String> name;
 	private ArrayList<String> name1;
 	private final Activity context;
+	int id;
 	public ModulesListAdapter(Activity context, ArrayList<String> name,ArrayList<String> name1) {
 		super(context, R.layout.module_list_item,name);
 		// TODO Auto-generated constructor stub
@@ -33,10 +48,6 @@ public class ModulesListAdapter extends ArrayAdapter<String> {
 System.out.println("nnnnnnnnnnnn"+name);
 System.out.println("nnnnnnnnnnnn"+name1);
 	}
-
-	
-
-	
 
 	@SuppressLint("ViewHolder")
 	@Override
@@ -50,12 +61,57 @@ System.out.println("nnnnnnnnnnnn"+name1);
         System.out.println("jjjjjjjjjjjjjjjjjjj"+name.get(position));
 			txtTitle1.setText(name.get(position));
 			txtTitle2.setText(name1.get(position));
-			
+		
+			txtTitle1.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+
+					System.out.println("viiieww"+v);
+					Intent intent = null;
+					if(((TextView) v).getText().equals("Introduction")){
+						intent = new Intent(v.getContext(), IntroductionNoteActivity.class);
+					}
+					if(((TextView) v).getText().equals("Traffic")){
+							intent = new Intent(v.getContext(), TrafficActivity.class);
+					}
+					if(((TextView) v).getText().equals("Buy")){
+						intent = new Intent(v.getContext(), BuyActivity.class);
+				    }
+					
+						
+						context.startActivity(intent);
+				}
+				
+
+			});
+
+		
+			txtTitle2.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+
+					Intent intent = null;
+					
+					if(((TextView) v).getText().equals("PopularPlace")){
+						intent = new Intent(v.getContext(), PopularPlacesActivity.class);
+				       }
+					if(((TextView) v).getText().equals("Food")){
+						intent = new Intent(v.getContext(), FoodActivity.class);
+				       }
+					if(((TextView) v).getText().equals("LocalTransport")){
+						intent = new Intent(v.getContext(), LocalTransferActivity.class);
+				       }
+						
+						context.startActivity(intent);
+				  }
+			});
+
 
 			return rowView;
 		// TODO Auto-generated method stub
 		
-	
 	
 	}
 
