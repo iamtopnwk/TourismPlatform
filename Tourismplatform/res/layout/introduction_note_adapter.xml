@@ -1,0 +1,64 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+ 
+    android:background="#E0E0E0"
+    tools:context="com.infotop.tourismplatform.introductionnote.IntroductionNoteActivity" >
+    
+    
+    
+    <RelativeLayout 
+        
+        android:id="@+id/lout_intro_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#ffffff"
+        android:orientation="vertical">
+      
+        <!-- about city -->
+        <ImageView 
+            android:id="@+id/img1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_launcher"/>
+        
+         <TextView 
+             android:id="@+id/heading"
+             android:layout_toRightOf="@id/img1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="10dp"
+             android:layout_marginLeft="10dp"
+             android:text="@string/about_city_head"/>
+        <TextView 
+            android:id="@+id/txt_message"
+            android:layout_below="@id/img1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+              android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/about_city"/>
+               <!--image bar  -->
+        <TextView
+             android:id="@+id/img_bar"
+            android:layout_below="@+id/txt_message"
+               android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#EEEEEE"
+            android:text="@string/image_bar"/>
+        
+        </RelativeLayout>
+   
+
+</RelativeLayout>
