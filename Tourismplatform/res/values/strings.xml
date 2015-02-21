@@ -14,17 +14,8 @@
     
               <!-- IntroductionNote module -->
     <string name="title_activity_introduction_note">IntroductionNoteActivity</string>
-    <string name="about_city">This is all about the city.Qingdao is located in Shandong Penisula southern end , mountain and the sea .Here you can see  beautiful pleasant climate .This city is a unique sea side city . It is one of the important city of eastern china.Here you can see soft sand beach at coastal level.</string>
-    <string name="about_city_head">About City</string>
-    <string name="txt_intro_head">Introduction</string>
-    <string name="best_travel_time_head">Best Travel Time</string>
-    <string name="best_travel_time"> In this city the best season is summer.In this time sea water is hot ,warm due to high temperature .Beer festival fall in this time . It is perfect time for delicious sea food and enjoy a good season.</string>
-    <string name="Recommendation_Play_Time_head">Recommendation Play Time</string>
-    <string name="recommendation_play_time">2pm - 5pm afternoon time is recommended.</string>
-    <string name="History_culture_head">History and Culture</string>
-    <string name="history_culture">Here beer festival is famous.Beer festival is found in 1991.Every year in August celebrates this festival .The general term of 16 days beer festival is determined by the relevant national ministers and city municipal peoples .
-        Quindao logo is the land mark sculpture architectures .It’s located in the beautiful may fourth square up to 30m diameter 27m , the most prominent features in that is the most pure shape elements arranged in combine into rotation of rising of “wind” the shape to make fully reflection.</string>
-    <string name="image_bar">__________________________________________</string>
+   <string name="txt_intro_head">Introduction</string>
+   <string name="image_bar">__________________________________________</string>
     
                  <!--Food module  -->
     <string name="title_activity_food">FoodActivity</string>
@@ -41,6 +32,7 @@
                  <!-- Traffic module -->
     <string name="title_activity_traffic">TrafficActivity</string>
     <string name="title_activity_traffic_adapter">TrafficAdapterActivity</string>
+    <string name="traffic_head">Traffic</string>
     
                 <!-- TravelNote module -->
     <string name="title_activity_travel_notes_main">TravelNotesMainActivity</string>
