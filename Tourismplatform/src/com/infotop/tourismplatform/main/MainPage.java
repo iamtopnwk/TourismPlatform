@@ -33,10 +33,14 @@ public class MainPage extends Activity {
 		mainListView = (ListView) findViewById( R.id.mainlist);
 		String[] modules = new String[] { "Introduction","Traffic","Buy"}; 
 		String[] modules1=new String[] { "PopularPlace","Food","LocalTransport"}; 
+
+		int[] imageId={ R.drawable.transport,
+			            R.drawable.food,
+			            R.drawable.buy,}; 
 		 list.addAll( Arrays.asList(modules) );
 		 list1.addAll( Arrays.asList(modules1) );
 		 
-		 listAdapter = new ModulesListAdapter(MainPage.this, list,list1);
+		 listAdapter = new ModulesListAdapter(MainPage.this, list,list1,imageId);
 		 System.out.println("llllllllllliiissttt::::"+list);
 		 System.out.println("llllllllllliiissttt::::"+list1);
 		    

@@ -34,16 +34,19 @@ import android.widget.TextView;
 
 public class ModulesListAdapter extends ArrayAdapter<String> {
 	
-	private ArrayList<String> name;
-	private ArrayList<String> name1;
+	private final ArrayList<String> name;
+	private final ArrayList<String> name1;
+	private final int[] imageId;
 	private final Activity context;
 	int id;
-	public ModulesListAdapter(Activity context, ArrayList<String> name,ArrayList<String> name1) {
+	public ModulesListAdapter(Activity context, ArrayList<String> name,ArrayList<String> name1,int[]imageId) {
 		super(context, R.layout.module_list_item,name);
 		// TODO Auto-generated constructor stub
 		this.context = context;
 		this.name = name;
 		this.name1 = name1;
+		this.imageId = imageId;
+	
 		
 System.out.println("nnnnnnnnnnnn"+name);
 System.out.println("nnnnnnnnnnnn"+name1);
@@ -57,10 +60,11 @@ System.out.println("nnnnnnnnnnnn"+name1);
 					R.layout.module_list_item, null);
 		 TextView txtTitle1 = (TextView) rowView.findViewById(R.id.module_list);
 		 TextView txtTitle2 = (TextView) rowView.findViewById(R.id.module_list1);
-		
+		// ImageView imgView = (ImageView) rowView.findViewById(R.id.iconImg);
         System.out.println("jjjjjjjjjjjjjjjjjjj"+name.get(position));
 			txtTitle1.setText(name.get(position));
 			txtTitle2.setText(name1.get(position));
+			//imgView.setImageResource(imageId[position]);
 		
 			txtTitle1.setOnClickListener(new View.OnClickListener() {
 

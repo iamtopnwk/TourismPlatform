@@ -77,10 +77,10 @@ public class RaidersMainActivity extends TabActivity {
 		tab1.setContent(i1);
 
 		// Tab for Videos
-		TabSpec tab2 = tabHost.newTabSpec("Comment");
-		Intent i2 = new Intent(RaidersMainActivity.this, CommentActivity.class);
+		TabSpec tab2 = tabHost.newTabSpec("TravelNotes");
+		Intent i2 = new Intent(RaidersMainActivity.this, TravelNotesMainActivity.class);
 		//i2.putExtra("dId", deviceId);
-		tab2.setIndicator(getResources().getString(R.string.Comment));
+		tab2.setIndicator(getResources().getString(R.string.travelNote));
 		tab2.setContent(i2);
 
 		// Adding all TabSpec to TabHost

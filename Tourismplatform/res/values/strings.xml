@@ -8,7 +8,8 @@
                     <!-- Main Page -->
 <string name="title_activity_comment">CommentActivity</string>
     <string name="MainPage">Main</string>
-    <string name="Comment">Comment</string>
+    <string name="travelNote">TravelNotes</string>
+   
     <string name="title_activity_main_page">MainPage</string>
     
               <!-- IntroductionNote module -->
