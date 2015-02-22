@@ -19,6 +19,7 @@ import com.infotop.tourismplatform.introductionnote.IntroductionNoteActivity;
 import com.infotop.tourismplatform.localtransfer.LocalTransferActivity;
 import com.infotop.tourismplatform.popularplaces.PopularPlacesActivity;
 import com.infotop.tourismplatform.traffic.TrafficActivity;
+import com.infotop.tourismplatform.traffic.TrafficAdapterActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -77,7 +78,7 @@ System.out.println("nnnnnnnnnnnn"+name1);
 						intent = new Intent(v.getContext(), IntroductionNoteActivity.class);
 					}
 					if(((TextView) v).getText().equals("Traffic")){
-							intent = new Intent(v.getContext(), TrafficActivity.class);
+							intent = new Intent(v.getContext(), TrafficAdapterActivity.class);
 					}
 					if(((TextView) v).getText().equals("Buy")){
 						intent = new Intent(v.getContext(), BuyActivity.class);

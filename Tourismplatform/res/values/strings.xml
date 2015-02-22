@@ -38,6 +38,10 @@
     <string name="title_activity_traffic">TrafficActivity</string>
     <string name="title_activity_traffic_adapter">TrafficAdapterActivity</string>
     <string name="traffic_head">Traffic</string>
+    <string name="traffic_message_details">Quindao International Airport is one airport in this city . In addition to domestic 30 cities outside and opened up to japan ,korea, singapore many international lines are there.
+                                           This city has three railway stations.From these three stations every day people travel all over other cities .
+                                           Every 10 minutes gap bus available at nearest bus stop.All buses are very much comfortable to travel.
+                                           Commonly used bus stop is quindao north bus station,east bus station etc.</string>
     
     
                 <!-- TravelNote module -->
