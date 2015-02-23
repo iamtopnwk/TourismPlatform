@@ -7,16 +7,41 @@ import com.infotop.tourismplatform.R.menu;
 
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.GradientDrawable.Orientation;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 public class PopularPlacesActivity extends Activity {
 
+	ListView	popularPlaceList;
+	PopularPlaceAdapter popularAdapter;
+	
+	String[] topicHead = {"Underground Grand Canyon", "Bamboo Museum"};
+	
+	String[] userName = {"Pratik", "Pabitra"};
+	
+	int[] imageId = {
+			R.drawable.trvle,
+			R.drawable.trvlee,
+	};
+	
+	String[] desc = {"Underground Grand Canyon at the foot of Longgang Mountain",
+			"Yinqueshan Han Tomb and Bamboo Slips Museum (present No.219, Yimeng Lu)"};
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_popular_places);
+		
+		popularPlaceList = (ListView) findViewById(R.id.popularplace_list);
+		int[] colors = {0, 0, 0};
+		popularPlaceList.setDivider(new GradientDrawable(Orientation.RIGHT_LEFT, colors));
+		popularPlaceList.setDividerHeight(10);
+		popularAdapter = new PopularPlaceAdapter(PopularPlacesActivity.this, topicHead, userName, imageId, desc);
+		popularPlaceList.setAdapter(popularAdapter);
 	}
 
 	@Override

@@ -2,15 +2,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.infotop.tourismplatform.popularplaces.PopularPlacesActivity" >
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
-
+    
+    android:background="#E0E0E0"
+	tools:context="com.infotop.tourismplatform.popularplaces.PopularPlacesActivity" >
+    
+    <TextView 
+     
+       android:id="@+id/txt_popplace_head"
+       android:layout_width="fill_parent"
+       android:layout_height="50dp"
+       android:text="@string/txt_popplace_head"
+       android:paddingLeft="100dp"
+       android:paddingTop="15dp"
+       android:background="#ffffff"/>
+   <ListView 
+       android:id="@+id/popularplace_list"
+       android:layout_below="@id/txt_popplace_head"
+       android:layout_marginTop="10dp"
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent"
+       android:divider="@null">
+       
+   </ListView>
+    
+    
 </RelativeLayout>

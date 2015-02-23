@@ -1,0 +1,64 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#fff" >
+
+        <RelativeLayout 
+        android:id="@+id/list_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#ffffff">
+    
+	<TextView 
+	    android:id="@+id/list_header"
+	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15sp"
+	     />
+    
+    <!-- List left side thumbnail image -->
+	
+        <ImageView 
+            android:id="@+id/list_popularplace_image"
+            android:layout_below="@id/list_header"
+            android:layout_width="110dp"
+            android:layout_height="80dp"
+            android:layout_alignParentLeft="true"
+        	android:layout_marginRight="10dp"
+        	android:padding="3dip" 
+             />
+    
+        <ImageView 
+            android:id="@+id/user_image"
+            android:layout_toRightOf="@id/list_popularplace_image"
+            android:layout_below="@id/list_header"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/trvle" />
+        
+    <!-- User Name -->
+    <TextView 
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/list_header"
+        android:layout_toRightOf="@id/user_image"
+        android:text="@string/uName"
+        />
+	<!-- Popular place description -->
+	<TextView 
+	    android:id="@+id/popPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:typeface="sans"
+        android:layout_toRightOf="@id/list_popularplace_image"
+        android:layout_below="@+id/user_image"
+        android:text="@string/placeDescription"/>
+</RelativeLayout>
+
+</RelativeLayout>
