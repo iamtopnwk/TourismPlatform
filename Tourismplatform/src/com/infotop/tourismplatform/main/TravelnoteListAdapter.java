@@ -36,7 +36,6 @@ public class TravelnoteListAdapter extends ArrayAdapter<String>{
 			holder.txtTitle1 = (TextView) rowView.findViewById(R.id.placeName);
 		
 			holder.imageView = (ImageView) rowView.findViewById(R.id.placeImg);
-			
 			rowView.setTag(holder);
 		} else {
 			holder = (ViewHolder) rowView.getTag();

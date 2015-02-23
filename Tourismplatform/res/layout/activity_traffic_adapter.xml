@@ -1,16 +1,133 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.infotop.tourismplatform.traffic.TrafficAdapterActivity" >
-
+    tools:context="com.infotop.tourismplatform.traffic.TrafficAdapterActivity"
+    android:orientation="vertical"
+    android:background="#F5F5F5" >
+<RelativeLayout 
+    android:id="@+id/aircraft_lout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_shape"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
+    >
     <TextView
+        android:id="@+id/traffic_head"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Aircraft"
          />
+    <TextView 
+        android:id="@+id/traffic_message"
+        android:layout_below="@id/traffic_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:maxLines="5"
+        android:text="@string/traffic_message_details"
+        />
+    <ImageButton 
+        android:id="@+id/show"
+        android:layout_below="@id/traffic_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:background="#ffffff"
+        android:src="@drawable/expandablelistview_subscribe_one_item_arrow"/>
+    <View
+            android:id="@+id/view1"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_below="@+id/traffic_message"
+            android:layout_marginTop="5dp"
+            android:layout_toLeftOf="@+id/show"
+             />
 
-</RelativeLayout>
+        <ImageButton
+            android:id="@+id/hide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/traffic_message"
+            android:src="@drawable/expandable_listview_down_arrow"
+            android:clickable="true"
+            android:background="#ffffff"
+            android:visibility="invisible" />
+    
+    </RelativeLayout>
+    <RelativeLayout 
+    android:id="@+id/Train_lout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_shape"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
+    >
+    <TextView
+        android:id="@+id/train_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Train"
+         />
+    <TextView 
+        android:id="@+id/train_message"
+        android:layout_below="@id/train_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:maxLines="5"
+        android:text="@string/traffic_message_details"/>
+    
+    <ImageButton 
+        android:id="@+id/show1"
+        android:layout_below="@id/train_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:background="#ffffff"
+        android:src="@drawable/expandablelistview_subscribe_one_item_arrow"/>
+    <View
+            android:id="@+id/view2"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_below="@+id/train_message"
+            android:layout_marginTop="5dp"
+            android:layout_toLeftOf="@+id/show1"/>
+
+        <ImageButton
+            android:id="@+id/hide1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/train_message"
+            android:src="@drawable/expandable_listview_down_arrow"
+            android:clickable="true"
+            android:background="#ffffff"
+            android:visibility="invisible" />
+    
+    </RelativeLayout>
+</LinearLayout>

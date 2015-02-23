@@ -28,15 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-
-            android:name=".main.CommentActivity"
-            android:label="@string/title_activity_comment" >
-        </activity>
+       
         <activity
             android:name=".main.MainPage"
             android:label="@string/title_activity_main_page" >
-
         </activity>
         <activity
             android:name=".food.FoodActivity"
@@ -46,9 +41,7 @@
             android:name=".buy.BuyActivity"
             android:label="@string/title_activity_buy" >
         </activity>
-         
-         <activity
-     
+        <activity
             android:name=".introductionnote.IntroductionNoteActivity"
             android:label="@string/title_activity_introduction_note" >
         </activity>
@@ -67,11 +60,18 @@
         <activity
             android:name=".main.TravelNotesMainActivity"
             android:label="@string/title_activity_travel_notes_main" >
-
         </activity>
         <activity
-            android:name="com.infotop.tourismplatform.traffic.TrafficAdapterActivity"
+            android:name=".traffic.TrafficAdapterActivity"
             android:label="@string/title_activity_traffic_adapter" >
+        </activity>
+        <activity
+            android:name=".buy.MallActivity"
+            android:label="@string/title_activity_mall" >
+        </activity>
+        <activity
+            android:name=".buy.SpecialShopsActivity"
+            android:label="@string/title_activity_special_shops" >
         </activity>
     </application>
 

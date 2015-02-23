@@ -5,14 +5,25 @@
     <string name="hello_world">1stpage</string>
     <string name="action_settings">Settings</string>
 
+
     <!-- Main Page -->
-    <string name="title_activity_comment">CommentActivity</string>
+
+    
+                    <!-- Main Page -->
+
+    
     <string name="MainPage">Main</string>
     <string name="travelNote">TravelNotes</string>
+
     <string name="title_activity_main_page">MainPage</string>
+
+  
+   
+
     
               <!-- IntroductionNote module -->
     <string name="title_activity_introduction_note">IntroductionNoteActivity</string>
+
     <string name="about_city">This is all about the city.Qingdao is located in Shandong Penisula southern end , mountain and the sea .Here you can see  beautiful pleasant climate .This city is a unique sea side city . It is one of the important city of eastern china.Here you can see soft sand beach at coastal level.</string>
     <string name="about_city_head">About City</string>
     <string name="txt_intro_head">Introduction</string>
@@ -26,10 +37,23 @@
     <string name="image_bar">__________________________________________</string>
 
     <!-- Food module -->
+
+  
+   
+    
+                 <!--Food module  -->
+
     <string name="title_activity_food">FoodActivity</string>
 
+
     <!-- Buy module -->
+
+    
+    
+                  <!-- Buy module -->
+
     <string name="title_activity_buy">BuyActivity</string>
+
     <string name="mallActivity">Malls</string>
     <string name="special_Shops">SpecialShops</string>
      <string name="message">Lorem ipsum dolor sit amet,
@@ -42,16 +66,44 @@
         </string>
 
     <!-- LocalTransfer module -->
+
+    
+    
+               <!--LocalTransfer module  -->
+
     <string name="title_activity_local_transfer">LocalTransferActivity</string>
 
+
     <!-- PopularPlaces module -->
+
+    
+    
+               <!-- PopularPlaces module -->
+
     <string name="title_activity_popular_places">PopularPlacesActivity</string>
 
+
     <!-- Traffic module -->
+
+    
+    
+                 <!-- Traffic module -->
+
     <string name="title_activity_traffic">TrafficActivity</string>
     <string name="title_activity_traffic_adapter">TrafficAdapterActivity</string>
 
+
     <!-- TravelNote module -->
+
+    <string name="traffic_head">Traffic</string>
+    <string name="traffic_message_details">Quindao International Airport is one airport in this city . In addition to domestic 30 cities outside and opened up to japan ,korea, singapore many international lines are there.
+                                           This city has three railway stations.From these three stations every day people travel all over other cities .
+                                           Every 10 minutes gap bus available at nearest bus stop.All buses are very much comfortable to travel.
+                                           Commonly used bus stop is quindao north bus station,east bus station etc.</string>
+    
+    
+                <!-- TravelNote module -->
+
     <string name="title_activity_travel_notes_main">TravelNotesMainActivity</string>
     <string name="title_activity_mall">MallActivity</string>
     <string name="title_activity_special_shops">SpecialShopsActivity</string>
