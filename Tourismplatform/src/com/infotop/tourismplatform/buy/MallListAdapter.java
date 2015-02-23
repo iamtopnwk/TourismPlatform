@@ -42,7 +42,7 @@ public class MallListAdapter extends ArrayAdapter<String> {
 			String text = context.getString(R.string.message);
 			SpannableString ss = new SpannableString(text);
 			 //Expose the indent for the first three rows
-			ss.setSpan(new MyLeadingMarginSpan2(7, 130), 0, ss.length(), 0);
+			ss.setSpan(new MyLeadingMarginSpan2(7, 210), 0, ss.length(), 0);
 			TextView messageView = (TextView)rowView.findViewById(R.id.message_view);
 			messageView.setText(ss);
 			
