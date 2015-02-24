@@ -68,7 +68,7 @@
             android:visibility="invisible" />
     
     </RelativeLayout>
-    <RelativeLayout 
+    <!-- <RelativeLayout 
     android:id="@+id/Train_lout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -129,5 +129,5 @@
             android:background="#ffffff"
             android:visibility="invisible" />
     
-    </RelativeLayout>
+    </RelativeLayout> -->
 </LinearLayout>

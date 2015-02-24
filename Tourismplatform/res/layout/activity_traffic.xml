@@ -2,18 +2,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E0E0E0"
+    android:background="#F5F5F5"
     tools:context="com.infotop.tourismplatform.traffic.TrafficActivity" >
-
+    
+   <ImageButton 
+       android:id="@+id/traffic_back"
+       android:layout_width="wrap_content"
+       android:layout_height="50dp"
+       android:src="@drawable/activity_title_layout_back"
+       android:background="#ffffff"
+       android:onClick="trafficBack"/>
    <TextView 
        android:id="@+id/traffic_head"
+       android:layout_toRightOf="@id/traffic_back"
        android:layout_width="fill_parent"
        android:layout_height="50dp"
        android:paddingLeft="100dp"
        android:paddingTop="15dp"
        android:text="@string/traffic_head"
-       android:background="#ffffff"/>
-   <ExpandableListView
+       android:background="#ffffff">
+       </TextView>
+   <ListView
        android:id="@+id/traffic_list"
        android:layout_below="@id/traffic_head"
        android:layout_marginTop="10dp"
@@ -21,5 +30,5 @@
        android:layout_height="fill_parent"
        android:divider="@null">
        
-   </ExpandableListView>
+   </ListView>
 </RelativeLayout>

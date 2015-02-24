@@ -78,7 +78,7 @@ System.out.println("nnnnnnnnnnnn"+name1);
 						intent = new Intent(v.getContext(), IntroductionNoteActivity.class);
 					}
 					if(((TextView) v).getText().equals("Traffic")){
-							intent = new Intent(v.getContext(), TrafficAdapterActivity.class);
+							intent = new Intent(v.getContext(), TrafficActivity.class);
 					}
 					if(((TextView) v).getText().equals("Buy")){
 						intent = new Intent(v.getContext(), BuyActivity.class);
