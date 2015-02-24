@@ -68,7 +68,7 @@ public class TrafficAdapterActivity extends ArrayAdapter<Traffic> {
 					    System.out.println("Hide button");
 					    holder.hide.setVisibility(View.INVISIBLE);
 					    holder.show.setVisibility(View.VISIBLE);
-					    holder.txtTitle1.setMaxLines(5);
+					    holder.txtTitle1.setMaxLines(3);
 
 					   }
 					  });
