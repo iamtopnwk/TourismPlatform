@@ -1,14 +1,25 @@
 package com.infotop.tourismplatform.main;
 
+import java.util.concurrent.ExecutionException;
+
+import model.TravelNote;
+
 import com.infotop.tourismplatform.R;
 import com.infotop.tourismplatform.R.id;
 import com.infotop.tourismplatform.R.layout;
 import com.infotop.tourismplatform.R.menu;
+import com.infotop.tourismplatform.introductionnote.model.IntroductionNote;
+import com.infotop.tourismplatform.urls.UrlInfo;
+import com.infotop.tourismplatform.utilities.GetOperation;
+import com.infotop.tourismplatform.utilities.JsonHelper;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.GradientDrawable.Orientation;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,17 +28,9 @@ import android.widget.ListView;
 public class TravelNotesMainActivity extends Activity {
 	TravelnoteListAdapter travelnotelistAdapter;
 	private ListView travelnotesListView ;
-	 String[] desc = 
-             { "good place", "very good place", "i like that place"};
+	DisplayImageOptions op;
+	 
 	
-	 String[] name = 
-             { "selva", "rakesh", "sureshbabu"};
-	
-	 int[] imageId = {
-		      R.drawable.trvle,
-		      R.drawable.trvlee,
-		      R.drawable.trvleee,
-		    };
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,8 +39,28 @@ public class TravelNotesMainActivity extends Activity {
 		int[] colors = {0, 0, 0}; // red for the example
 		travelnotesListView.setDivider(new GradientDrawable(Orientation.RIGHT_LEFT, colors));
 		travelnotesListView.setDividerHeight(10);
-		travelnotelistAdapter = new TravelnoteListAdapter(TravelNotesMainActivity.this, desc,name,imageId);
+		op = new DisplayImageOptions.Builder()
+		.showStubImage(R.drawable.notavailable)
+		.showImageForEmptyUri(R.drawable.notavailable)
+		.showImageOnFail(R.drawable.notavailable).cacheInMemory(true)
+		.cacheOnDisc(true).displayer(new RoundedBitmapDisplayer(20))
+		.build();
+		
+		
+        String serverUrl=UrlInfo.TAG_TRAVEL_NOTE;
+		
+		AsyncTask<String, Void, String>introData=new GetOperation().execute(serverUrl);
+		try{
+			TravelNote[] tNotes=(TravelNote[]) JsonHelper.toObject(introData.get(), TravelNote[].class);
+		travelnotelistAdapter = new TravelnoteListAdapter(TravelNotesMainActivity.this, tNotes,op);
 		travelnotesListView.setAdapter(travelnotelistAdapter);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override

@@ -40,7 +40,6 @@
             android:layout_width="20dip"
             android:layout_height="20dip"
             android:layout_below="@+id/placeDesc"
-            android:src="@drawable/trvlee"
             android:layout_toRightOf="@+id/thumbnail"
             android:layout_marginTop="5dp"
              />
@@ -103,7 +102,6 @@
         android:layout_marginTop="8dp"
         android:layout_marginLeft="97dp"
         android:layout_toRightOf="@+id/price"
-        android:text="45Y"
         android:textStyle="italic" 
         android:layout_marginBottom="5dip"
         />

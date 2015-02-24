@@ -1,27 +1,35 @@
 package com.infotop.tourismplatform.main;
 
+import model.TravelNote;
+
 import com.infotop.tourismplatform.R;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import android.app.Activity;
-import android.content.Context;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class TravelnoteListAdapter extends ArrayAdapter<String>{
-	private final String[] desc;
+public class TravelnoteListAdapter extends ArrayAdapter<TravelNote>{
+	/*private final String[] desc;
 	private final String[] name;
-	private final int[] imageId;
+	private final int[] imageId;*/
+	private final TravelNote[] tNote;
 	private final Activity context;
-	public TravelnoteListAdapter(Activity context, String[] desc,
-			String[] name, int[] imageId) {
-		super(context, R.layout.travel_list_items,desc);
+	private final DisplayImageOptions op;
+	
+	protected ImageLoader loader = ImageLoader.getInstance();
+	public TravelnoteListAdapter(Activity context, TravelNote[] tNote,DisplayImageOptions op ) {
+		super(context, R.layout.travel_list_items,tNote);
 		this.context = context;
-		this.desc = desc;
-		this.name = name;
-		this.imageId = imageId;
+		this.tNote = tNote;
+		this.op = op;
+		
 	}
 	
 	@Override
@@ -32,19 +40,25 @@ public class TravelnoteListAdapter extends ArrayAdapter<String>{
 			rowView = context.getLayoutInflater().inflate(
 					R.layout.travel_list_items, parent, false);
 			holder = new ViewHolder();
-			holder.txtTitle = (TextView) rowView.findViewById(R.id.placeDesc);
-			holder.txtTitle1 = (TextView) rowView.findViewById(R.id.placeName);
+			holder.head = (TextView) rowView.findViewById(R.id.placeName);
+			holder.message = (TextView) rowView.findViewById(R.id.placeDesc);
+			holder.time = (TextView) rowView.findViewById(R.id.time);
+			
 		
-			holder.imageView = (ImageView) rowView.findViewById(R.id.placeImg);
+			holder.placeImage = (ImageView) rowView.findViewById(R.id.placeImg);
+			holder.userImage = (ImageView) rowView.findViewById(R.id.usrImg);
 			rowView.setTag(holder);
 		} else {
 			holder = (ViewHolder) rowView.getTag();
 		}
 		final int id = position;
-		holder.txtTitle.setText(desc[position]);
-		holder.txtTitle1.setText(name[position]);
-		holder.imageView.setImageResource(imageId[position]);
-	
+		holder.head.setText(tNote[position].getName());
+		holder.message.setText(tNote[position].getHeadName());
+		holder.time.setText(tNote[position].getTime());
+		//holder.placeImage.setImageURI(tNote[position].getImagePath());
+		//holder.userImage.setImageResource(imageId[position]);
+		loader.displayImage(tNote[position].getImagePath(), holder.placeImage, op, null);
+		loader.displayImage(tNote[position].getUserImage(), holder.userImage, op, null);
 
 		return rowView;
 
@@ -52,9 +66,11 @@ public class TravelnoteListAdapter extends ArrayAdapter<String>{
 	
 	
 	private class ViewHolder {
-		public TextView txtTitle;
-		public TextView txtTitle1;
-		public ImageView imageView;
+		public TextView head;
+		public TextView message;
+		public TextView time;
+		public ImageView placeImage;
+		public ImageView userImage;
 		
 	}
 
