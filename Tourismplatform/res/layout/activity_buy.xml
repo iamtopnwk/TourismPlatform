@@ -4,6 +4,13 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
      android:background="#ffffff" >
+     <ImageButton 
+        android:id="@+id/food_back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="#ffffff"
+        android:src="@drawable/activity_title_layout_back"
+        android:onClick="foodActivityBack"/>
       <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

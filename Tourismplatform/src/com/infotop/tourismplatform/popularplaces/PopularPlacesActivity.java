@@ -12,6 +12,7 @@ import android.graphics.drawable.GradientDrawable.Orientation;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 
 public class PopularPlacesActivity extends Activity {
@@ -42,6 +43,10 @@ public class PopularPlacesActivity extends Activity {
 		popularPlaceList.setDividerHeight(10);
 		popularAdapter = new PopularPlaceAdapter(PopularPlacesActivity.this, topicHead, userName, imageId, desc);
 		popularPlaceList.setAdapter(popularAdapter);
+	}
+	
+	public void popularPlaceBack(View view){
+		finish();
 	}
 
 	@Override

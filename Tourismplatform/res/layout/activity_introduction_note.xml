@@ -7,9 +7,17 @@
     tools:context="com.infotop.tourismplatform.introductionnote.IntroductionNoteActivity" >
    
   
+    <ImageButton 
+        android:id="@+id/introduction_note_back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:onClick="introductionNoteBack"
+        android:src="@drawable/activity_title_layout_back"/>
    <TextView 
      
        android:id="@+id/txt_intro_head"
+       android:layout_toRightOf="@id/introduction_note_back_btn"
        android:layout_width="fill_parent"
        android:layout_height="50dp"
        android:text="@string/txt_intro_head"

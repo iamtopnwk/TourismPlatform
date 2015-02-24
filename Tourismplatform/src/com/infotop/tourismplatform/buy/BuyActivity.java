@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
@@ -46,6 +47,10 @@ public class BuyActivity extends TabActivity {
 		tabHost.addTab(tab2); // Adding videos tab
 	
 }
+	
+	public void foodActivityBack(View view) {
+		finish();
+	}
 	
 
 	@Override

@@ -5,10 +5,20 @@
     
     android:background="#E0E0E0"
 	tools:context="com.infotop.tourismplatform.popularplaces.PopularPlacesActivity" >
+	
+    
+    <ImageButton 
+        android:id="@+id/popular_place_back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:src="@drawable/activity_title_layout_back"
+        android:onClick="popularPlaceBack"/>
     
     <TextView 
      
        android:id="@+id/txt_popplace_head"
+       android:layout_toRightOf="@id/popular_place_back_btn"
        android:layout_width="fill_parent"
        android:layout_height="50dp"
        android:text="@string/txt_popplace_head"

@@ -31,7 +31,7 @@ public class TrafficActivity extends Activity {
 		setContentView(R.layout.activity_traffic);
 		
 		listView=(ListView)findViewById(R.id.traffic_list);
-		String serverUrl=UrlInfo.TAG_INTRODUCTION_NOTE;
+		String serverUrl=UrlInfo.TAG_TRAFFIC;
 		
 		AsyncTask<String, Void, String>introData=new GetOperation().execute(serverUrl);
 		try{
