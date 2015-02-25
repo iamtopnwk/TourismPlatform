@@ -3,6 +3,7 @@ package com.infotop.tourismplatform.main;
 import model.TravelNote;
 
 import com.infotop.tourismplatform.R;
+import com.infotop.tourismplatform.urls.UrlInfo;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -22,6 +23,7 @@ public class TravelnoteListAdapter extends ArrayAdapter<TravelNote>{
 	private final TravelNote[] tNote;
 	private final Activity context;
 	private final DisplayImageOptions op;
+	
 	
 	protected ImageLoader loader = ImageLoader.getInstance();
 	public TravelnoteListAdapter(Activity context, TravelNote[] tNote,DisplayImageOptions op ) {
@@ -57,8 +59,8 @@ public class TravelnoteListAdapter extends ArrayAdapter<TravelNote>{
 		holder.time.setText(tNote[position].getTime());
 		//holder.placeImage.setImageURI(tNote[position].getImagePath());
 		//holder.userImage.setImageResource(imageId[position]);
-		loader.displayImage(tNote[position].getImagePath(), holder.placeImage, op, null);
-		loader.displayImage(tNote[position].getUserImage(), holder.userImage, op, null);
+		loader.displayImage(UrlInfo.ROOT_PATH+tNote[position].getImagePath(), holder.placeImage, op, null);
+		loader.displayImage(UrlInfo.ROOT_PATH+tNote[position].getUserImage(), holder.userImage, op, null);
 
 		return rowView;
 
