@@ -5,7 +5,7 @@
 	android:layout_height="wrap_content"
 	android:padding="5dp">
 	<TextView
-	    android:id="@+id/heading_view"
+	    android:id="@+id/buy_heading_view"
 		android:textSize="18.0sp"		
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -15,7 +15,7 @@
 	
 	<TextView
 		android:textSize="12.0sp"
-		android:id="@+id/message_view"
+		android:id="@+id/buy_message_view"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_marginTop="43dp"
@@ -23,7 +23,7 @@
 		android:textStyle="italic"
 		/>
 	<ImageView
-	    android:id="@+id/mall_image"
+	    android:id="@+id/sp_buy_image"
 	    android:layout_marginTop="47dp"
 		android:layout_width="130dp"
 		android:layout_height="85dp"

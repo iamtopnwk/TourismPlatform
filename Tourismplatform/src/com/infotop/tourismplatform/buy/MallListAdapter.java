@@ -1,6 +1,12 @@
 package com.infotop.tourismplatform.buy;
 
 import com.infotop.tourismplatform.R;
+import com.infotop.tourismplatform.model.Mall;
+import com.infotop.tourismplatform.model.TravelNote;
+import com.infotop.tourismplatform.urls.UrlInfo;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import android.R.string;
 import android.app.Activity;
 import android.content.Context;
@@ -15,19 +21,20 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MallListAdapter extends ArrayAdapter<String> {
-    private final Activity context;
-    private final String[] name;
-	private final int[] imageId;
- 
-	public MallListAdapter(Activity context,String[] name, int[] imageId) {
-		super(context, R.layout.mall_list_item,name);
+public class MallListAdapter extends ArrayAdapter<Mall> {
+    
+	private final Activity context;
+    private final Mall[] mall;
+	private final DisplayImageOptions op;
+	
+	protected ImageLoader loader = ImageLoader.getInstance();
+	public MallListAdapter(Activity context,Mall[] mall, DisplayImageOptions op) {
+		super(context, R.layout.mall_list_item,mall);
 		// TODO Auto-generated constructor stub
 		this.context = context;
-		this.name = name;
-		this.imageId = imageId;
-		System.out.println("NAME::::"+name);
-		System.out.println("NAME::::"+imageId);
+		this.mall = mall;
+		this.op = op;
+		
 	}
 	
 	@Override
@@ -39,14 +46,15 @@ public class MallListAdapter extends ArrayAdapter<String> {
 					R.layout.mall_list_item, parent, false);
 			holder = new ViewHolder();
 			
-			String text = context.getString(R.string.message);
-			SpannableString ss = new SpannableString(text);
+			//String text = context.getString(R.string.message);
+			//SpannableString ss = new SpannableString(text);
 			 //Expose the indent for the first three rows
-			ss.setSpan(new MyLeadingMarginSpan2(7, 210), 0, ss.length(), 0);
-			TextView messageView = (TextView)rowView.findViewById(R.id.message_view);
-			messageView.setText(ss);
+			//ss.setSpan(new MyLeadingMarginSpan2(7, 210), 0, ss.length(), 0);
+			//TextView messageView = (TextView)rowView.findViewById(R.id.message_view);
+			//messageView.setText(ss);
 			
-			holder.txtTitle = (TextView) rowView.findViewById(R.id.heading_view);
+			holder.headName = (TextView) rowView.findViewById(R.id.heading_view);
+			holder.message = (TextView) rowView.findViewById(R.id.message_view);
 		
 			holder.imageView = (ImageView) rowView.findViewById(R.id.mall_image);
 			
@@ -56,8 +64,14 @@ public class MallListAdapter extends ArrayAdapter<String> {
 		}
 		
 		
-		holder.txtTitle.setText(name[position]);
-		holder.imageView.setImageResource(imageId[position]);
+		holder.headName.setText(mall[position].getHeadName());
+		//holder.message.setText(mall[position].getMessage());
+		SpannableString ss = new SpannableString(mall[position].getMessage());
+		ss.setSpan(new MyLeadingMarginSpan2(7, 210), 0, ss.length(), 0);
+		holder.message.setText(ss);
+		
+		loader.displayImage(UrlInfo.ROOT_PATH+mall[position].getImagePath(), holder.imageView, op, null);
+		
 		
 
 		return rowView;
@@ -66,8 +80,8 @@ public class MallListAdapter extends ArrayAdapter<String> {
 	
 	
 	private class ViewHolder {
-		public TextView txtTitle;
-		
+		public TextView headName;
+		public TextView message;
 		public ImageView imageView;
 		
 	}

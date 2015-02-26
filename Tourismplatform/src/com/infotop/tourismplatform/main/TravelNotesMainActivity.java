@@ -2,20 +2,13 @@ package com.infotop.tourismplatform.main;
 
 import java.util.concurrent.ExecutionException;
 
-import model.TravelNote;
-
 import com.infotop.tourismplatform.R;
-import com.infotop.tourismplatform.R.id;
-import com.infotop.tourismplatform.R.layout;
-import com.infotop.tourismplatform.R.menu;
-import com.infotop.tourismplatform.introductionnote.model.IntroductionNote;
+import com.infotop.tourismplatform.model.TravelNote;
 import com.infotop.tourismplatform.urls.UrlInfo;
 import com.infotop.tourismplatform.utilities.GetOperation;
 import com.infotop.tourismplatform.utilities.JsonHelper;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
-
-import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.GradientDrawable.Orientation;
@@ -49,9 +42,9 @@ public class TravelNotesMainActivity extends Activity {
 		
         String serverUrl=UrlInfo.TAG_TRAVEL_NOTE;
 		
-		AsyncTask<String, Void, String>introData=new GetOperation().execute(serverUrl);
+		AsyncTask<String, Void, String>tNoteData=new GetOperation().execute(serverUrl);
 		try{
-			TravelNote[] tNotes=(TravelNote[]) JsonHelper.toObject(introData.get(), TravelNote[].class);
+			TravelNote[] tNotes=(TravelNote[]) JsonHelper.toObject(tNoteData.get(), TravelNote[].class);
 		travelnotelistAdapter = new TravelnoteListAdapter(TravelNotesMainActivity.this, tNotes,op);
 		travelnotesListView.setAdapter(travelnotelistAdapter);
 		} catch (InterruptedException e) {

@@ -3,10 +3,8 @@ package com.infotop.tourismplatform.buy;
 import java.util.concurrent.ExecutionException;
 
 import com.infotop.tourismplatform.R;
-import com.infotop.tourismplatform.main.TravelNotesMainActivity;
-import com.infotop.tourismplatform.main.TravelnoteListAdapter;
 import com.infotop.tourismplatform.model.Mall;
-import com.infotop.tourismplatform.model.TravelNote;
+import com.infotop.tourismplatform.model.SpecialBuy;
 import com.infotop.tourismplatform.urls.UrlInfo;
 import com.infotop.tourismplatform.utilities.GetOperation;
 import com.infotop.tourismplatform.utilities.JsonHelper;
@@ -22,19 +20,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-public class MallActivity extends Activity {
-	MallListAdapter malllistAdapter;
-	private ListView mallListView ;
+public class SpecialBuyActivity extends Activity {
+	SpecialBuyListAdapter specialBuylistAdapter;
+	private ListView specialBuyListView ;
 	DisplayImageOptions op;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_mall);
-		mallListView=(ListView)findViewById(R.id.mall_list);
+		setContentView(R.layout.activity_special_shops);
+		
+		specialBuyListView=(ListView)findViewById(R.id.special_buy_list);
 		int[] colors = {0, 0, 0}; // red for the example
-		mallListView.setDivider(new GradientDrawable(Orientation.RIGHT_LEFT, colors));
-		mallListView.setDividerHeight(10);
+		specialBuyListView.setDivider(new GradientDrawable(Orientation.RIGHT_LEFT, colors));
+		specialBuyListView.setDividerHeight(10);
 		
 		op = new DisplayImageOptions.Builder()
 		.showStubImage(R.drawable.notavailable)
@@ -43,13 +42,13 @@ public class MallActivity extends Activity {
 		.cacheOnDisc(true).displayer(new RoundedBitmapDisplayer(0))
 		.build();
 		
-		 String serverUrl=UrlInfo.TAG_MALL_MODULE;
-		 AsyncTask<String, Void, String>mallData=new GetOperation().execute(serverUrl);
+		 String serverUrl=UrlInfo.TAG_SPECIAL_BUY;
+		 AsyncTask<String, Void, String>sbuyData=new GetOperation().execute(serverUrl);
 		 try{
 			 
-			 Mall[] mall=(Mall[]) JsonHelper.toObject(mallData.get(), Mall[].class);
-		     malllistAdapter = new MallListAdapter(MallActivity.this,mall,op);
-		     mallListView.setAdapter(malllistAdapter);
+			 SpecialBuy[] specialBuys=(SpecialBuy[]) JsonHelper.toObject(sbuyData.get(), SpecialBuy[].class);
+			 specialBuylistAdapter = new SpecialBuyListAdapter(SpecialBuyActivity.this,specialBuys,op);
+			 specialBuyListView.setAdapter(specialBuylistAdapter);
 		 } catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -57,14 +56,14 @@ public class MallActivity extends Activity {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-	}
 		
-	
+		
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.mall, menu);
+		getMenuInflater().inflate(R.menu.special_shops, menu);
 		return true;
 	}
 

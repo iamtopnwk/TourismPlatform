@@ -36,7 +36,7 @@ public class BuyActivity extends TabActivity {
 
 		// Tab for Videos
 		TabSpec tab2 = tabHost.newTabSpec("Special");
-		Intent i2 = new Intent(BuyActivity.this, SpecialShopsActivity.class);
+		Intent i2 = new Intent(BuyActivity.this, SpecialBuyActivity.class);
 		//i2.putExtra("dId", deviceId);
 		tab2.setIndicator(getResources().getString(R.string.special_Shops));
 		tab2.setContent(i2);

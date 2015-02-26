@@ -1,15 +1,12 @@
 package com.infotop.tourismplatform.main;
 
-import model.TravelNote;
-
 import com.infotop.tourismplatform.R;
+import com.infotop.tourismplatform.model.TravelNote;
 import com.infotop.tourismplatform.urls.UrlInfo;
-
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import android.app.Activity;
-
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -17,9 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class TravelnoteListAdapter extends ArrayAdapter<TravelNote>{
-	/*private final String[] desc;
-	private final String[] name;
-	private final int[] imageId;*/
+	
 	private final TravelNote[] tNote;
 	private final Activity context;
 	private final DisplayImageOptions op;
