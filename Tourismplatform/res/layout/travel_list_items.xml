@@ -45,7 +45,7 @@
              />
    
     <TextView
-        android:id="@+id/placeName"
+        android:id="@+id/tnote_userName"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/placeDesc"
@@ -71,13 +71,12 @@
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/placeName"
+        android:layout_below="@+id/tnote_userName"
         android:textColor="#343434"
         android:textSize="12sp"
         android:layout_marginTop="8dp"
         android:layout_marginLeft="5dp"
         android:layout_toRightOf="@+id/priceImg"
-        android:text="1209"
         android:textStyle="italic" 
         android:layout_marginBottom="5dip"/>
      
@@ -85,23 +84,23 @@
             android:id="@+id/clockImg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/placeName"
+            android:layout_below="@+id/tnote_userName"
             android:src="@drawable/clock"
             android:layout_toRightOf="@+id/price"
             android:layout_marginTop="11dp"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="45dp"
              />
       
        <TextView
         android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/placeName"
+        android:layout_below="@+id/tnote_userName"
         android:textColor="#343434"
         android:textSize="12sp"
         android:layout_marginTop="8dp"
-        android:layout_marginLeft="97dp"
-        android:layout_toRightOf="@+id/price"
+         android:layout_marginLeft="11dp"
+        android:layout_toRightOf="@+id/clockImg"
         android:textStyle="italic" 
         android:layout_marginBottom="5dip"
         />

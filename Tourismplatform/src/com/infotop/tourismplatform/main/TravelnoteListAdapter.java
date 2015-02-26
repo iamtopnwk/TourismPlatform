@@ -37,8 +37,9 @@ public class TravelnoteListAdapter extends ArrayAdapter<TravelNote>{
 			rowView = context.getLayoutInflater().inflate(
 					R.layout.travel_list_items, parent, false);
 			holder = new ViewHolder();
-			holder.head = (TextView) rowView.findViewById(R.id.placeName);
-			holder.message = (TextView) rowView.findViewById(R.id.placeDesc);
+			holder.head = (TextView) rowView.findViewById(R.id.placeDesc);
+			holder.userName = (TextView) rowView.findViewById(R.id.tnote_userName);
+			holder.price = (TextView) rowView.findViewById(R.id.price);
 			holder.time = (TextView) rowView.findViewById(R.id.time);
 			
 		
@@ -49,12 +50,13 @@ public class TravelnoteListAdapter extends ArrayAdapter<TravelNote>{
 			holder = (ViewHolder) rowView.getTag();
 		}
 		final int id = position;
-		holder.head.setText(tNote[position].getName());
-		holder.message.setText(tNote[position].getHeadName());
+		//holder.head.setText(tNote[position].getName());
+		holder.head.setText(tNote[position].getHeadName());
+		holder.userName.setText(tNote[position].getUserName());
+		holder.price.setText(tNote[position].getPrice());
 		holder.time.setText(tNote[position].getTime());
-		//holder.placeImage.setImageURI(tNote[position].getImagePath());
-		//holder.userImage.setImageResource(imageId[position]);
-		loader.displayImage(UrlInfo.ROOT_PATH+tNote[position].getImagePath(), holder.placeImage, op, null);
+		
+		loader.displayImage(UrlInfo.ROOT_PATH+tNote[position].getImagePath(), holder.placeImage, null, null);
 		loader.displayImage(UrlInfo.ROOT_PATH+tNote[position].getUserImage(), holder.userImage, op, null);
 
 		return rowView;
@@ -64,7 +66,8 @@ public class TravelnoteListAdapter extends ArrayAdapter<TravelNote>{
 	
 	private class ViewHolder {
 		public TextView head;
-		public TextView message;
+		public TextView userName;
+		public TextView price;
 		public TextView time;
 		public ImageView placeImage;
 		public ImageView userImage;

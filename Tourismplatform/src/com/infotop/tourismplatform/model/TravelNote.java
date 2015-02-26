@@ -2,30 +2,33 @@ package com.infotop.tourismplatform.model;
 
 public class TravelNote {
 	
-	private String name;
 	private String headName;
-	private String message;
+	private String price;
+	private String userName;
 	private String userImage;
 	private String imagePath;
 	private String time;
 	
-	public String getName() {
-		return name;
+	
+	public String getUserName() {
+		return userName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
+	
 	public String getImagePath() {
 		return imagePath;
 	}
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
 	}
-	public String getMessage() {
-		return message;
+	
+	public String getPrice() {
+		return price;
 	}
-	public void setMessage(String message) {
-		this.message = message;
+	public void setPrice(String price) {
+		this.price = price;
 	}
 	public String getHeadName() {
 		return headName;
