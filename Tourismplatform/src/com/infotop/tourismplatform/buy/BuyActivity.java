@@ -27,18 +27,16 @@ public class BuyActivity extends TabActivity {
 		setContentView(R.layout.activity_buy);
 		TabHost tabHost = getTabHost();
 
-		// Tab for Songs
-		TabSpec tab1 = tabHost.newTabSpec("Mall");
-		Intent i1 = new Intent(BuyActivity.this, MallActivity.class);
-		//i1.putExtra("dId", deviceId);
-		tab1.setIndicator(getResources().getString(R.string.mallActivity));
+		// Tab for specialBuys
+		TabSpec tab1 = tabHost.newTabSpec("Special");
+		Intent i1 = new Intent(BuyActivity.this, SpecialBuyActivity.class);
+		tab1.setIndicator(getResources().getString(R.string.special_Shops));
 		tab1.setContent(i1);
 
-		// Tab for Videos
-		TabSpec tab2 = tabHost.newTabSpec("Special");
-		Intent i2 = new Intent(BuyActivity.this, SpecialBuyActivity.class);
-		//i2.putExtra("dId", deviceId);
-		tab2.setIndicator(getResources().getString(R.string.special_Shops));
+		// Tab for mall
+		TabSpec tab2 = tabHost.newTabSpec("Mall");
+		Intent i2 = new Intent(BuyActivity.this, MallActivity.class);
+		tab2.setIndicator(getResources().getString(R.string.mallActivity));
 		tab2.setContent(i2);
 
 		// Adding all TabSpec to TabHost

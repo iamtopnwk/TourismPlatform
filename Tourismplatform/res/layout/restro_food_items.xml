@@ -1,0 +1,57 @@
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:padding="5dp">
+	<TextView
+	    android:id="@+id/restro_food_heading_view"
+		android:textSize="18.0sp"		
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="5dp"
+		android:textColor="#FFA500"
+		android:textStyle="italic" />
+	
+	<TextView
+		android:textSize="12.0sp"
+		android:id="@+id/restro_food_message_view"
+		android:layout_toRightOf="@+id/restro_food_image"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="69dp"
+		android:layout_marginLeft="45dp"
+		android:textColor="#808080" 
+		android:textStyle="italic"
+		/>
+	<ImageView
+	    android:id="@+id/restro_food_image"
+	    android:layout_marginTop="47dp"
+		android:layout_width="130dp"
+		android:layout_height="85dp"
+		 />
+	 <TextView
+            android:id="@+id/price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/restro_food_message_view"
+            android:text="Price:"
+            android:layout_toRightOf="@+id/restro_food_image"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="45dp"
+            android:textColor="#343434"
+             />
+	 <TextView
+        android:id="@+id/restro_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/restro_food_message_view"
+        android:textColor="#808080"
+        android:textSize="12sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/price_text"
+        android:textStyle="italic" 
+        android:layout_marginBottom="5dip"/>
+	
+	<View style="@style/Divider"/>
+	</RelativeLayout>

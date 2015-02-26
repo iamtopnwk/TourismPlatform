@@ -5,25 +5,14 @@
     <string name="hello_world">1stpage</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Main Page -->
 
-
-
-    
-                    <!-- Main Page -->
-
-    
     <string name="MainPage">Main</string>
     <string name="travelNote">TravelNotes</string>
-
     <string name="title_activity_main_page">MainPage</string>
 
-  
-   
-
-    
-              <!-- IntroductionNote module -->
+    <!-- IntroductionNote module -->
     <string name="title_activity_introduction_note">IntroductionNoteActivity</string>
-
     <string name="about_city">This is all about the city.Qingdao is located in Shandong Penisula southern end , mountain and the sea .Here you can see  beautiful pleasant climate .This city is a unique sea side city . It is one of the important city of eastern china.Here you can see soft sand beach at coastal level.</string>
     <string name="about_city_head">About City</string>
     <string name="txt_intro_head">Introduction</string>
@@ -36,63 +25,33 @@
         Quindao logo is the land mark sculpture architectures .It’s located in the beautiful may fourth square up to 30m diameter 27m , the most prominent features in that is the most pure shape elements arranged in combine into rotation of rising of “wind” the shape to make fully reflection.</string>
     <string name="image_bar">__________________________________________</string>
 
-   
-
-  
-   
-    
-                 <!--Food module  -->
-
-    <string name="title_activity_food">FoodActivity</string>
-    <string name="txt_food_head">Food</string>
-
-
-  
-
-    
-    
-                  <!-- Buy module -->
+    <!-- Buy module -->
 
     <string name="title_activity_buy">BuyActivity</string>
-
     <string name="mallActivity">Malls</string>
     <string name="special_Shops">SpecialShops</string>
-     <!-- <string name="message">Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Ut placerat nunc id eros posuere sit amet malesuada lacus viverra. 
-        Phasellus vel orci nec est interdum facilisis.
-        Phasellus vel orci nec est interdum facilisis.
-        Phasellus vel orci nec est interdum facilisis.
-        Phasellus vel orci nec est interdum facilisis.
-      
-        </string> -->
 
-   
+    <!-- Food module -->
+    <string name="title_activity_food">FoodActivity</string>
+    <string name="special_foods">SpecialFoods</string>
+    <string name="restro_food">RestaurantFood</string>
 
-    
-    
-               <!--LocalTransfer module  -->
+    <!-- LocalTransfer module -->
 
     <string name="title_activity_local_transfer">LocalTransferActivity</string>
     <string name="txt_local_transport_head">Local Transport</string>
 
-
-  
-
-    
-    
-               <!-- PopularPlaces module -->
+    <!-- PopularPlaces module -->
 
     <string name="title_activity_popular_places">PopularPlacesActivity</string>
     <string name="txt_popplace_head">Popular Places</string>
     <string name="uName">Pratik</string>
     <string name="placeDescription">Linyi is a prefecture-level city in the south of Shandong province, People\'s Republic of China. As of 2011, Linyi is the largest prefecture-level city in Shandong, both by area and population, Linyi borders Rizhao to the east.</string>
 
-
     <!-- Traffic module -->
 
-    
-    
-                 <!-- Traffic module -->
+
+    <!-- Traffic module -->
 
     <string name="title_activity_traffic">TrafficActivity</string>
     <string name="title_activity_traffic_adapter">TrafficAdapterActivity</string>
@@ -101,12 +60,13 @@
                                            This city has three railway stations.From these three stations every day people travel all over other cities .
                                            Every 10 minutes gap bus available at nearest bus stop.All buses are very much comfortable to travel.
                                            Commonly used bus stop is quindao north bus station,east bus station etc.</string>
-    
-    
-                <!-- TravelNote module -->
+
+    <!-- TravelNote module -->
 
     <string name="title_activity_travel_notes_main">TravelNotesMainActivity</string>
     <string name="title_activity_mall">MallActivity</string>
     <string name="title_activity_special_shops">SpecialShopsActivity</string>
+    <string name="title_activity_special_food">SpecialFoodActivity</string>
+    <string name="title_activity_restaurant_food">RestaurantFoodActivity</string>
 
 </resources>

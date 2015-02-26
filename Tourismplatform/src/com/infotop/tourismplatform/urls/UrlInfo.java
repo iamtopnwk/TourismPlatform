@@ -10,6 +10,10 @@ public class UrlInfo {
     public static String TAG_SPECIAL_BUY="http://192.168.8.64:8080/TravelPlatform/rest/specialBuyModuleapp";
     public static String TAG_POPULAR_PLACE="http://192.168.8.64:8080/TravelPlatform/rest/popularPlaceModuleapp";
     public static String TAG_LOCAL_TRANSPORT="http://192.168.8.64:8080/TravelPlatform/rest/localTransportModuleapp";
+    public static String TAG_SPECIAL_FOOD="http://192.168.8.64:8080/TravelPlatform/rest/specialfoodModuleapp";
+    public static String TAG_RESTRO_FOOD="http://192.168.8.64:8080/TravelPlatform/rest/restaurantfoodModuleapp";
+
+
 
     
 }

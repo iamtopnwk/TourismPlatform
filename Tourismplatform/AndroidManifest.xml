@@ -29,7 +29,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-       
         <activity
             android:name=".main.MainPage"
             android:label="@string/title_activity_main_page" >
@@ -73,6 +72,14 @@
         <activity
             android:name=".buy.SpecialBuyActivity"
             android:label="@string/title_activity_special_shops" >
+        </activity>
+        <activity
+            android:name=".food.SpecialFoodActivity"
+            android:label="@string/title_activity_special_food" >
+        </activity>
+        <activity
+            android:name=".food.RestaurantFoodActivity"
+            android:label="@string/title_activity_restaurant_food" >
         </activity>
     </application>
 
