@@ -2,15 +2,17 @@ package com.infotop.tourismplatform.model;
 
 public class PopularPlace {
 	
-	private String topicHead;
+	private String headName;
 	private String imagePath;
 	private String userName;
-	private String desc;
-	public String getTopicHead() {
-		return topicHead;
+	private String userImage;
+	private String message;
+	
+	public String getHeadName() {
+		return headName;
 	}
-	public void setTopicHead(String topicHead) {
-		this.topicHead = topicHead;
+	public void setHeadName(String headName) {
+		this.headName = headName;
 	}
 	public String getImagePath() {
 		return imagePath;
@@ -24,12 +26,20 @@ public class PopularPlace {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public String getDesc() {
-		return desc;
+	public String getUserImage() {
+		return userImage;
 	}
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setUserImage(String userImage) {
+		this.userImage = userImage;
 	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	
+	
 	
 	
 

@@ -32,6 +32,7 @@ public class TravelNotesMainActivity extends Activity {
 		int[] colors = {0, 0, 0}; // red for the example
 		travelnotesListView.setDivider(new GradientDrawable(Orientation.RIGHT_LEFT, colors));
 		travelnotesListView.setDividerHeight(10);
+		
 		op = new DisplayImageOptions.Builder()
 		.showStubImage(R.drawable.notavailable)
 		.showImageForEmptyUri(R.drawable.notavailable)

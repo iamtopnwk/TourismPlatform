@@ -52,21 +52,24 @@ public class PopularPlaceAdapter extends ArrayAdapter<PopularPlace>{
 		
 		holder.topicHead = (TextView) rowView.findViewById(R.id.list_header);
 		holder.userName = (TextView) rowView.findViewById(R.id.userName);
-		holder.userImage = (ImageView) rowView.findViewById(R.id.user_image);
+		
 		holder.desc = (TextView) rowView.findViewById(R.id.popPlace);
+		
+		holder.userImage = (ImageView) rowView.findViewById(R.id.user_image);
 		holder.popImage = (ImageView) rowView.findViewById(R.id.list_popularplace_image);
 		rowView.setTag(holder);
 		} else {
 			holder = (ViewHolder) rowView.getTag();
 		}
 		
-		holder.topicHead.setText(popPlace[position].getTopicHead());
-		SpannableString ss = new SpannableString(popPlace[position].getDesc());
+		holder.topicHead.setText(popPlace[position].getHeadName());
+		holder.userName.setText(popPlace[position].getUserName());
+		SpannableString ss = new SpannableString(popPlace[position].getMessage());
 		ss.setSpan(new MyLeadingMarginSpan2(7, 210), 0, ss.length(), 0);
 		holder.desc.setText(ss);
 		System.out.println("++++++++++++++"+popPlace[position].getUserName());
 		loader.displayImage(UrlInfo.ROOT_PATH+popPlace[position].getImagePath(), holder.popImage, op, null);
-		loader.displayImage(UrlInfo.ROOT_PATH+popPlace[position].getImagePath(), holder.userImage, op, null);
+		loader.displayImage(UrlInfo.ROOT_PATH+popPlace[position].getUserImage(), holder.userImage, op, null);
 		
 
 		return rowView;

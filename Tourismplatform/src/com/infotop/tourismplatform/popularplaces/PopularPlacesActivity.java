@@ -10,6 +10,7 @@ import com.infotop.tourismplatform.buy.MallActivity;
 import com.infotop.tourismplatform.buy.MallListAdapter;
 import com.infotop.tourismplatform.model.Mall;
 import com.infotop.tourismplatform.model.PopularPlace;
+import com.infotop.tourismplatform.model.TravelNote;
 import com.infotop.tourismplatform.urls.UrlInfo;
 import com.infotop.tourismplatform.utilities.GetOperation;
 import com.infotop.tourismplatform.utilities.JsonHelper;
@@ -37,6 +38,7 @@ public class PopularPlacesActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_popular_places);
+		popularPlaceList=(ListView)findViewById(R.id.popularplace_list);
 		popularPlaceList.setDividerHeight(10);
 		
 		op = new DisplayImageOptions.Builder()
@@ -48,10 +50,11 @@ public class PopularPlacesActivity extends Activity {
 
 		String serverUrl=UrlInfo.TAG_POPULAR_PLACE;
 		AsyncTask<String, Void, String>popPlaceData=new GetOperation().execute(serverUrl);
+		 System.out.println("======================"+popPlaceData);
 		 try{
-			 
-			 PopularPlace[] popPlace=(PopularPlace[]) JsonHelper.toObject(popPlaceData.get(), PopularPlace.class);
-			 System.out.println("======================"+popPlace);
+		
+			 PopularPlace[] popPlace=(PopularPlace[]) JsonHelper.toObject(popPlaceData.get(), PopularPlace[].class);
+			 System.out.println("======================+++++"+popPlace);
 			 popularAdapter = new PopularPlaceAdapter(PopularPlacesActivity.this,popPlace,op);
 		     popularPlaceList.setAdapter(popularAdapter);
 		 } catch (InterruptedException e) {
