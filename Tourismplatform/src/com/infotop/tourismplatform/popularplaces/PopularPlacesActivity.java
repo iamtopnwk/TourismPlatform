@@ -1,14 +1,26 @@
 package com.infotop.tourismplatform.popularplaces;
 
+import java.util.concurrent.ExecutionException;
+
 import com.infotop.tourismplatform.R;
 import com.infotop.tourismplatform.R.id;
 import com.infotop.tourismplatform.R.layout;
 import com.infotop.tourismplatform.R.menu;
+import com.infotop.tourismplatform.buy.MallActivity;
+import com.infotop.tourismplatform.buy.MallListAdapter;
+import com.infotop.tourismplatform.model.Mall;
+import com.infotop.tourismplatform.model.PopularPlace;
+import com.infotop.tourismplatform.urls.UrlInfo;
+import com.infotop.tourismplatform.utilities.GetOperation;
+import com.infotop.tourismplatform.utilities.JsonHelper;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.GradientDrawable.Orientation;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,30 +31,35 @@ public class PopularPlacesActivity extends Activity {
 
 	ListView	popularPlaceList;
 	PopularPlaceAdapter popularAdapter;
-	
-	String[] topicHead = {"Underground Grand Canyon", "Bamboo Museum"};
-	
-	String[] userName = {"Pratik", "Pabitra"};
-	
-	int[] imageId = {
-			R.drawable.trvle,
-			R.drawable.trvlee,
-	};
-	
-	String[] desc = {"Underground Grand Canyon at the foot of Longgang Mountain",
-			"Yinqueshan Han Tomb and Bamboo Slips Museum (present No.219, Yimeng Lu)"};
+	DisplayImageOptions op;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_popular_places);
-		
-		popularPlaceList = (ListView) findViewById(R.id.popularplace_list);
-		int[] colors = {0, 0, 0};
-		popularPlaceList.setDivider(new GradientDrawable(Orientation.RIGHT_LEFT, colors));
 		popularPlaceList.setDividerHeight(10);
-		popularAdapter = new PopularPlaceAdapter(PopularPlacesActivity.this, topicHead, userName, imageId, desc);
-		popularPlaceList.setAdapter(popularAdapter);
+		
+		op = new DisplayImageOptions.Builder()
+		.showStubImage(R.drawable.notavailable)
+		.showImageForEmptyUri(R.drawable.notavailable)
+		.showImageOnFail(R.drawable.notavailable).cacheInMemory(true)
+		.cacheOnDisc(true).displayer(new RoundedBitmapDisplayer(0))
+		.build();
+
+		String serverUrl=UrlInfo.TAG_POPULAR_PLACE;
+		AsyncTask<String, Void, String>popPlaceData=new GetOperation().execute(serverUrl);
+		 try{
+			 
+			 PopularPlace[] popPlace=(PopularPlace[]) JsonHelper.toObject(popPlaceData.get(), PopularPlace.class);
+			 System.out.println("======================"+popPlace);
+			 popularAdapter = new PopularPlaceAdapter(PopularPlacesActivity.this,popPlace,op);
+		     popularPlaceList.setAdapter(popularAdapter);
+		 } catch (InterruptedException e) {
+				e.printStackTrace();
+			} catch (ExecutionException e) {
+				e.printStackTrace();
+			}
+		
 	}
 	
 	public void popularPlaceBack(View view){

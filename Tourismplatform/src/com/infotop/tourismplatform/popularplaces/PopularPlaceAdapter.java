@@ -1,11 +1,16 @@
 package com.infotop.tourismplatform.popularplaces;
 
 import com.infotop.tourismplatform.R;
+import com.infotop.tourismplatform.model.PopularPlace;
+import com.infotop.tourismplatform.urls.UrlInfo;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import android.app.Activity;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.text.Layout;
+import android.text.SpannableString;
 import android.text.style.LeadingMarginSpan.LeadingMarginSpan2;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,21 +19,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-public class PopularPlaceAdapter extends ArrayAdapter<String>{
+public class PopularPlaceAdapter extends ArrayAdapter<PopularPlace>{
 	
-	private final String[] topicHead;
-	private final String[] userName;
-	private final int[] imageId;
-	private final String[] desc;
+	
+	private PopularPlace[] popPlace;
+	private final DisplayImageOptions op;
 	private final Activity context;
-
-	public PopularPlaceAdapter(Activity context, String[]topicHead, String[] userName, int[] imageId, String[] desc) {
-		super(context, R.layout.popular_place_adapter, desc);
+	
+	protected ImageLoader loader = ImageLoader.getInstance();
+	public PopularPlaceAdapter(Activity context, PopularPlace[] popPlace, DisplayImageOptions op) {
+		super(context, R.layout.popular_place_adapter, popPlace);
 		this.context = context;
-		this.userName = userName;
-		this.topicHead = topicHead;
-		this.desc = desc;
-		this.imageId = imageId;
+		this.popPlace =popPlace;
+		this.op = op;
 	}
 	
 	@Override
@@ -39,31 +42,96 @@ public class PopularPlaceAdapter extends ArrayAdapter<String>{
 			rowView = context.getLayoutInflater().inflate(
 					R.layout.popular_place_adapter, parent, false);
 		holder = new ViewHolder();
-		holder.txtTitle = (TextView) rowView.findViewById(R.id.list_header);
-		holder.txtTitle1 = (TextView) rowView.findViewById(R.id.userName);
-		holder.txtTitle2 = (TextView) rowView.findViewById(R.id.popPlace);
-		holder.imageView = (ImageView) rowView.findViewById(R.id.list_popularplace_image);
-			
+		
+//		String text = context.getString(R.string.placeDescription);
+//		SpannableString ss = new SpannableString(text);
+//		//Expose the indent for the first three rows
+//		ss.setSpan(new MyLeadingMarginSpan2(3, 165), 0, ss.length(), 0);
+//		TextView messageView = (TextView)rowView.findViewById(R.id.popPlace);
+//		messageView.setText(ss);
+		
+		holder.topicHead = (TextView) rowView.findViewById(R.id.list_header);
+		holder.userName = (TextView) rowView.findViewById(R.id.userName);
+		holder.userImage = (ImageView) rowView.findViewById(R.id.user_image);
+		holder.desc = (TextView) rowView.findViewById(R.id.popPlace);
+		holder.popImage = (ImageView) rowView.findViewById(R.id.list_popularplace_image);
+		rowView.setTag(holder);
 		} else {
 			holder = (ViewHolder) rowView.getTag();
 		}
-		final int id = position;
-		holder.txtTitle.setText(topicHead[position]);
-		holder.txtTitle1.setText(userName[position]);
-		holder.txtTitle2.setText(desc[position]);
-		holder.imageView.setImageResource(imageId[position]);
-	
+		
+		holder.topicHead.setText(popPlace[position].getTopicHead());
+		SpannableString ss = new SpannableString(popPlace[position].getDesc());
+		ss.setSpan(new MyLeadingMarginSpan2(7, 210), 0, ss.length(), 0);
+		holder.desc.setText(ss);
+		System.out.println("++++++++++++++"+popPlace[position].getUserName());
+		loader.displayImage(UrlInfo.ROOT_PATH+popPlace[position].getImagePath(), holder.popImage, op, null);
+		loader.displayImage(UrlInfo.ROOT_PATH+popPlace[position].getImagePath(), holder.userImage, op, null);
+		
 
 		return rowView;
 
 	}
 	
 	private class ViewHolder {
-		public TextView txtTitle;
-		public TextView txtTitle1;
-		public TextView txtTitle2;
-		public ImageView imageView;
+		public TextView topicHead;
+		public TextView userName;
+		public ImageView userImage;
+		public TextView desc;
+		public ImageView popImage;
 		
 	}
+	
+	class MyLeadingMarginSpan2 implements LeadingMarginSpan2 {
+		private int margin;
+		private int lines;
+
+		MyLeadingMarginSpan2(int lines, int margin) {
+			this.margin = margin;
+			this.lines = lines;
+		}
+
+		
+		/* * Returns the amount by which to adjust the leading margin. Positive
+		 * values move away from the leading edge of the paragraph, negative
+		 * values move towards it.
+		 */
+		@Override
+		public int getLeadingMargin(boolean first) {
+			if (first) {
+				
+				/* * This indentation is applied to the number of rows returned
+				 * getLeadingMarginLineCount ()*/
+				 
+				return margin;
+			} else {
+				// Offset for all other Layout layout ) { }
+				
+				/* * Returns * the number of rows which should be applied * indent
+				 * returned by getLeadingMargin (true) Note:* Indent only
+				 * applies to N lines of the first paragraph.*/
+				 
+				return 0;
+			}
+		}
+
+		@Override
+		public void drawLeadingMargin(Canvas c, Paint p, int x, int dir,
+				int top, int baseline, int bottom, CharSequence text,
+				int start, int end, boolean first, Layout layout) {
+		}
+
+		
+		/* * Returns the number of lines of text to which this object is attached
+		 * that the "first line" margin will apply to. Note that if this returns
+		 * N, the first N lines of the region, not the first N lines of each
+		 * paragraph, will be given the special margin width.
+		 */
+
+		@Override
+		public int getLeadingMarginLineCount() {
+			return lines;
+		}
+	};
 		
 }
