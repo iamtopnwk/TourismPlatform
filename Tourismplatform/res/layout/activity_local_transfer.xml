@@ -15,12 +15,22 @@
     
     <TextView 
      
-       android:id="@+id/txt_popplace_head"
+       android:id="@+id/txt_local_transport_head"
        android:layout_toRightOf="@id/local_transport_back_btn"
        android:layout_width="fill_parent"
        android:layout_height="50dp"
        android:text="@string/txt_local_transport_head"
-       android:paddingLeft="100dp"
+       android:paddingLeft="50dp"
        android:paddingTop="15dp"
        android:background="#ffffff"/>
+    
+    <ListView 
+        android:id="@+id/local_transport_list"
+        android:layout_below="@id/txt_local_transport_head"
+      
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent"
+       android:divider="@null">
+        
+    </ListView>
 </RelativeLayout>

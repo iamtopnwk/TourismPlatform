@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.infotop.tourismplatform.traffic.TrafficAdapterActivity"
+    android:orientation="vertical"
+    android:background="#F5F5F5" >
+    
+    <RelativeLayout 
+    android:id="@+id/local_transport_lout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_shape"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
+    >
+    <TextView
+        android:id="@+id/local_transport_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Bus"
+         />
+    <TextView 
+        android:id="@+id/local_transport_message"
+        android:layout_below="@id/local_transport_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:maxLines="3"
+        android:text=""/>
+    
+    <ImageButton 
+        android:id="@+id/local_transport_show"
+        android:layout_below="@id/local_transport_message"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:background="#ffffff"
+        android:src="@drawable/expandablelistview_subscribe_one_item_arrow"/>
+    <View
+            android:id="@+id/local_transport_view"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_below="@+id/local_transport_message"
+            android:layout_marginTop="5dp"
+            android:layout_toLeftOf="@+id/local_transport_show"/>
+
+        <ImageButton
+            android:id="@+id/local_transport_hide"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/local_transport_message"
+            android:src="@drawable/expandable_listview_down_arrow"
+            android:clickable="true"
+            android:background="#ffffff"
+            android:visibility="invisible" />
+    
+    </RelativeLayout>
+    </LinearLayout>
