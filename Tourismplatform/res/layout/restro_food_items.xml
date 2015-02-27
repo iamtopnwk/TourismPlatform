@@ -18,8 +18,8 @@
 		android:layout_toRightOf="@+id/restro_food_image"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="69dp"
-		android:layout_marginLeft="45dp"
+		android:layout_marginTop="45dp"
+		android:layout_marginLeft="20dp"
 		android:textColor="#808080" 
 		android:textStyle="italic"
 		/>
@@ -36,8 +36,8 @@
             android:layout_below="@+id/restro_food_message_view"
             android:text="Price:"
             android:layout_toRightOf="@+id/restro_food_image"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="45dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="20dp"
             android:textColor="#343434"
              />
 	 <TextView
@@ -47,7 +47,7 @@
         android:layout_below="@+id/restro_food_message_view"
         android:textColor="#808080"
         android:textSize="12sp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="3dp"
         android:layout_marginLeft="5dp"
         android:layout_toRightOf="@+id/price_text"
         android:textStyle="italic" 
