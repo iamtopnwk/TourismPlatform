@@ -41,15 +41,7 @@ public class PopularPlaceAdapter extends ArrayAdapter<PopularPlace>{
 		if (rowView == null) {
 			rowView = context.getLayoutInflater().inflate(
 					R.layout.popular_place_adapter, parent, false);
-		holder = new ViewHolder();
-		
-//		String text = context.getString(R.string.placeDescription);
-//		SpannableString ss = new SpannableString(text);
-//		//Expose the indent for the first three rows
-//		ss.setSpan(new MyLeadingMarginSpan2(3, 165), 0, ss.length(), 0);
-//		TextView messageView = (TextView)rowView.findViewById(R.id.popPlace);
-//		messageView.setText(ss);
-		
+		holder = new ViewHolder();		
 		holder.topicHead = (TextView) rowView.findViewById(R.id.list_header);
 		holder.userName = (TextView) rowView.findViewById(R.id.userName);
 		
@@ -65,10 +57,9 @@ public class PopularPlaceAdapter extends ArrayAdapter<PopularPlace>{
 		holder.topicHead.setText(popPlace[position].getHeadName());
 		holder.userName.setText(popPlace[position].getUserName());
 		SpannableString ss = new SpannableString(popPlace[position].getMessage());
-		ss.setSpan(new MyLeadingMarginSpan2(7, 210), 0, ss.length(), 0);
+		ss.setSpan(new MyLeadingMarginSpan2(5, 210), 0, ss.length(), 0);
 		holder.desc.setText(ss);
-		System.out.println("++++++++++++++"+popPlace[position].getUserName());
-		loader.displayImage(UrlInfo.ROOT_PATH+popPlace[position].getImagePath(), holder.popImage, op, null);
+		loader.displayImage(UrlInfo.ROOT_PATH+popPlace[position].getImagePath(), holder.popImage, null, null);
 		loader.displayImage(UrlInfo.ROOT_PATH+popPlace[position].getUserImage(), holder.userImage, op, null);
 		
 

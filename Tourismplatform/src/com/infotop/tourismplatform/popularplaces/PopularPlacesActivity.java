@@ -45,7 +45,7 @@ public class PopularPlacesActivity extends Activity {
 		.showStubImage(R.drawable.notavailable)
 		.showImageForEmptyUri(R.drawable.notavailable)
 		.showImageOnFail(R.drawable.notavailable).cacheInMemory(true)
-		.cacheOnDisc(true).displayer(new RoundedBitmapDisplayer(0))
+		.cacheOnDisc(true).displayer(new RoundedBitmapDisplayer(20))
 		.build();
 
 		String serverUrl=UrlInfo.TAG_POPULAR_PLACE;
