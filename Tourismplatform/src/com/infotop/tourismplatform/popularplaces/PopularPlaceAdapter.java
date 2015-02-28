@@ -57,7 +57,7 @@ public class PopularPlaceAdapter extends ArrayAdapter<PopularPlace>{
 		holder.topicHead.setText(popPlace[position].getHeadName());
 		holder.userName.setText(popPlace[position].getUserName());
 		SpannableString ss = new SpannableString(popPlace[position].getMessage());
-		ss.setSpan(new MyLeadingMarginSpan2(5, 210), 0, ss.length(), 0);
+		ss.setSpan(new MyLeadingMarginSpan2(4, 190), 0, ss.length(), 0);
 		holder.desc.setText(ss);
 		loader.displayImage(UrlInfo.ROOT_PATH+popPlace[position].getImagePath(), holder.popImage, null, null);
 		loader.displayImage(UrlInfo.ROOT_PATH+popPlace[position].getUserImage(), holder.userImage, op, null);
