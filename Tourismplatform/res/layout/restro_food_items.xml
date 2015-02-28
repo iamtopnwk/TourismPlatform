@@ -38,7 +38,7 @@
             android:layout_toRightOf="@+id/restro_food_image"
             android:layout_marginTop="3dp"
             android:layout_marginLeft="20dp"
-            android:textColor="#343434"
+            android:textColor="#FFA500"
              />
 	 <TextView
         android:id="@+id/restro_price"

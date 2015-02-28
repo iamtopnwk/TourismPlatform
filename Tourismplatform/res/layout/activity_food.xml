@@ -1,27 +1,39 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#E0E0E0"
-    tools:context="com.infotop.tourismplatform.food.FoodActivity" >
-
-    <ImageButton 
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+     android:background="#ffffff" >
+     <ImageButton 
         android:id="@+id/food_back_btn"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:background="#ffffff"
         android:src="@drawable/activity_title_layout_back"
-        android:onClick="foodActivityback"/>
-    
-    <TextView 
-     
-       android:id="@+id/txt_food_head"
-       android:layout_toRightOf="@id/food_back_btn"
-       android:layout_width="fill_parent"
-       android:layout_height="50dp"
-       android:text="@string/txt_food_head"
-       android:paddingLeft="100dp"
-       android:paddingTop="15dp"
-       android:background="#ffffff"/>
+        android:onClick="foodActivityBack"/>
+      <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
 
-</RelativeLayout>
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="140dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="false"
+            android:background="#cfcfcf" >
+        </TabWidget>
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="30dp"
+            >
+
+        </FrameLayout>
+    </RelativeLayout>
+
+</TabHost>

@@ -10,7 +10,7 @@
         android:layout_height="30dp"
         android:background="#ffffff"
         android:src="@drawable/activity_title_layout_back"
-        android:onClick="foodActivityBack"/>
+        android:onClick="buyActivityBack"/>
       <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

@@ -46,7 +46,7 @@ public class BuyActivity extends TabActivity {
 	
 }
 	
-	public void foodActivityBack(View view) {
+	public void buyActivityBack(View view) {
 		finish();
 	}
 	

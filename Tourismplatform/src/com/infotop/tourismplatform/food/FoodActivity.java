@@ -24,7 +24,7 @@ public class FoodActivity extends TabActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_buy);
+		setContentView(R.layout.activity_food);
 		TabHost tabHost = getTabHost();
 
 		// Tab for SpecialFood
@@ -46,7 +46,9 @@ public class FoodActivity extends TabActivity {
 	
 }
 	
-	
+	public void foodActivityBack(View view){
+		finish();
+	}
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -55,9 +57,7 @@ public class FoodActivity extends TabActivity {
 		return true;
 	}
 	
-	/*public void foodActivityback(View view){
-		finish();
-	}*/
+	
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
